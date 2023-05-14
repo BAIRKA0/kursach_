@@ -140,6 +140,7 @@ namespace Kursach_TRPK
                         myConnection.Close();
                         LoadData_Booking();
                         LoadComboBox4_5();
+                        
                     }
                     else
                     {
@@ -217,9 +218,46 @@ namespace Kursach_TRPK
             string connectString = "Data Source=BAIRKA\\SQLEXPRESS; Initial Catalog=furniture_store; Integrated Security=true;";
             SqlConnection myConnection = new SqlConnection(connectString);
             myConnection.Open();
-            string query = "DELETE FROM booking WHERE id="+id;
+            string query = "DELETE FROM booking WHERE id=" + id;
             SqlCommand command = new SqlCommand(query, myConnection);
             SqlDataReader reader = command.ExecuteReader();
+            reader.Close();
+            myConnection.Close();
+            LoadData_Booking();
+            LoadComboBox4_5();
+        }
+
+        private void Update(string id, string category, string article, int kol, string place, string date)
+        {
+            string connectString = "Data Source=BAIRKA\\SQLEXPRESS; Initial Catalog=furniture_store; Integrated Security=true;";
+            SqlConnection myConnection = new SqlConnection(connectString);
+            myConnection.Open();
+            Dictionary<String, String> dic = new Dictionary<String, String>()
+            {
+                { "шкаф","SELECT count FROM wardrobe WHERE article="+article },
+                { "стул","SELECT count FROM chairs WHERE article="+article },
+                { "полка","SELECT count FROM shelf WHERE article="+article },
+                { "кресло","SELECT count FROM armchair WHERE article="+article }
+            };
+            string query = dic[category];
+            SqlCommand command = new SqlCommand(query, myConnection);
+            SqlDataReader reader = command.ExecuteReader();
+            string str="";
+            while(reader.Read())
+            {
+                str = reader[0].ToString();
+            }
+            reader.Close();
+            if (kol <= Convert.ToInt32(str))
+            {
+                query = "UPDATE booking SET booking_category='" + category+ "',booking_article='" + article+ "',booking_count=" + kol+ ",booking_place='" + place+ "',booking_date='" + date+"' WHERE id="+id;
+                command = new SqlCommand(query, myConnection);
+                reader = command.ExecuteReader();
+            }
+            else
+            {
+                MessageBox.Show("Количество больше допустимого", "Ошибка");
+            }
             reader.Close();
             myConnection.Close();
             LoadData_Booking();
@@ -265,10 +303,7 @@ namespace Kursach_TRPK
 
         private void button3_Click(object sender, EventArgs e)
         {
-            /////sadasdsa
-            ///asdadadasd
-            ///asdadad
-            ///adadas
+            Update(comboBox4.Text, comboBox6.Text, comboBox8.Text, Convert.ToInt32(textBox2.Text), comboBox7.Text, dateTimePicker1.Value.ToShortDateString());
         }
     }
 }
