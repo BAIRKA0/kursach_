@@ -23,7 +23,7 @@ namespace Kursach_TRPK
             LoadComboBox2();
             LoadComboBox4_5();
         }
-        private void LoadComboBox2()
+        private void LoadComboBox2() //Заполняет возможными артикулами на странице мебели
         { 
             comboBox2.Items.Clear();
             for (int i = 0; i < dataGridView1.RowCount; i++)
@@ -31,7 +31,7 @@ namespace Kursach_TRPK
                 comboBox2.Items.Add(dataGridView1[0, i].Value);
             }
         }
-        private void LoadComboBox3()
+        private void LoadComboBox3() //Заполняет возможными расположениями на странице мебели
         {
             comboBox3.Items.Clear();
             for (int i = 0; i < dataGridView1.RowCount; i++)
@@ -43,7 +43,7 @@ namespace Kursach_TRPK
             }
         }
 
-        private void LoadComboBox4_5()
+        private void LoadComboBox4_5() //Заполняет возможными id броней 
         {
             comboBox4.Items.Clear();
             comboBox5.Items.Clear();
@@ -54,7 +54,7 @@ namespace Kursach_TRPK
             }
         }
 
-        private void LoadChange()
+        private void LoadChange() //Заполняет поля брони
         {
             for(int i = 0; i < dataGridView2.RowCount; i++)
             {
@@ -68,7 +68,7 @@ namespace Kursach_TRPK
                 }
             }
         }
-        private void Booking_Article(string str)
+        private void Booking_Article(string str) //Заполняет возможными артикулами на странице броней
         {
             string connectString = "Data Source=BAIRKA\\SQLEXPRESS; Initial Catalog=furniture_store; Integrated Security=true;";
             SqlConnection myConnection = new SqlConnection(connectString);
@@ -95,7 +95,7 @@ namespace Kursach_TRPK
                 comboBox8.Items.Add(s);
         }
 
-        private void Booking_Place(string article,string category)
+        private void Booking_Place(string article,string category) //Заполняет возможными расположениями на странице броней
         {
             string connectString = "Data Source=BAIRKA\\SQLEXPRESS; Initial Catalog=furniture_store; Integrated Security=true;";
             SqlConnection myConnection = new SqlConnection(connectString);
@@ -121,7 +121,7 @@ namespace Kursach_TRPK
             foreach (string s in data)
                 comboBox7.Items.Add(s);
         }
-        private void Booking()
+        private void Booking() //Создает запись брони
         {
             for (int i = 0; i < dataGridView1.RowCount; i++) {
                 if (comboBox2.Text == dataGridView1[0,i].Value.ToString() 
@@ -150,7 +150,7 @@ namespace Kursach_TRPK
             }
         }
 
-        private void LoadData_Furniture(string str)
+        private void LoadData_Furniture(string str) //Заполняет таблицу мебели
         {
             string connectString = "Data Source=BAIRKA\\SQLEXPRESS; Initial Catalog=furniture_store; Integrated Security=true;";
             SqlConnection myConnection = new SqlConnection(connectString);
@@ -186,7 +186,7 @@ namespace Kursach_TRPK
             foreach (string[] s in data)
                 dataGridView1.Rows.Add(s);
         }
-        private void LoadData_Booking()
+        private void LoadData_Booking() //Заполняет таблицу броней
         {
             string connectString = "Data Source=BAIRKA\\SQLEXPRESS; Initial Catalog=furniture_store; Integrated Security=true;";
             SqlConnection myConnection = new SqlConnection(connectString);
@@ -213,7 +213,7 @@ namespace Kursach_TRPK
                 dataGridView2.Rows.Add(s);
         }
 
-        private void Delete(string id)
+        private void Delete(string id) //Удаляет запись брони из БД
         {
             string connectString = "Data Source=BAIRKA\\SQLEXPRESS; Initial Catalog=furniture_store; Integrated Security=true;";
             SqlConnection myConnection = new SqlConnection(connectString);
@@ -227,7 +227,7 @@ namespace Kursach_TRPK
             LoadComboBox4_5();
         }
 
-        private void Update(string id, string category, string article, int kol, string place, string date)
+        private void Update(string id, string category, string article, int kol, string place, string date) //Редактирует запись брони в БД
         {
             string connectString = "Data Source=BAIRKA\\SQLEXPRESS; Initial Catalog=furniture_store; Integrated Security=true;";
             SqlConnection myConnection = new SqlConnection(connectString);
@@ -263,45 +263,45 @@ namespace Kursach_TRPK
             LoadData_Booking();
             LoadComboBox4_5();
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) //Вызывает LoadData_Furniture и LoadComboBox2 при выборе категории
         {
             String str = comboBox1.Text;
             LoadData_Furniture(str);
             LoadComboBox2();
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) //Вызывает LoadComboBox3 при выборе артикула на странице мебели
         {
             LoadComboBox3();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //Вызывает Booking при нажатии на кнопку
         {
             Booking();
         }
 
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e) //Вызывает LoadChange при выборе расположения на странице мебели
         {
             LoadChange();
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) //Вызывает Delete при нажатии на кнопку
         {
             Delete(comboBox5.Text);
         }
 
-        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e) //Вызывает Booking_Article при выборе артикула на странице брони
         {
             Booking_Article(comboBox6.Text);
         }
 
-        private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox8_SelectedIndexChanged(object sender, EventArgs e) //Вызывает Booking_Place при выборе расположения на странице брони
         {
             Booking_Place(comboBox8.Text,comboBox6.Text);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //Вызывает Update при нажатии на кнопку
         {
             Update(comboBox4.Text, comboBox6.Text, comboBox8.Text, Convert.ToInt32(textBox2.Text), comboBox7.Text, dateTimePicker1.Value.ToShortDateString());
         }
