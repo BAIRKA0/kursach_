@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,7 +70,7 @@ namespace Kursach_TRPK
             }
         }
         private void Booking_Article(string str) //Заполняет возможными артикулами на странице броней
-        {
+        {                                     //DESKTOP-MANINV5
             string connectString = "Data Source=BAIRKA\\SQLEXPRESS; Initial Catalog=furniture_store; Integrated Security=true;";
             SqlConnection myConnection = new SqlConnection(connectString);
             myConnection.Open();
@@ -304,6 +305,33 @@ namespace Kursach_TRPK
         private void button3_Click(object sender, EventArgs e) //Вызывает Update при нажатии на кнопку
         {
             Update(comboBox4.Text, comboBox6.Text, comboBox8.Text, Convert.ToInt32(textBox2.Text), comboBox7.Text, dateTimePicker1.Value.ToShortDateString());
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Проверяем, что нажатие было на ячейку, а не на заголовок столбца
+            if (e.ColumnIndex >= 0)
+            {
+                comboBox2.SelectedItem = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                comboBox3.SelectedItem = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+            }
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Проверяем, что нажатие было на ячейку, а не на заголовок столбца
+            if (e.ColumnIndex >= 0)
+            {
+                comboBox4.SelectedItem = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
+                comboBox5.SelectedItem = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
+                comboBox6.SelectedItem = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
+                comboBox7.SelectedItem = dataGridView2.Rows[e.RowIndex].Cells[4].Value.ToString();
+                comboBox8.SelectedItem = dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString();
+                textBox2.Text = dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString();
+                string format = "dd.MM.yyyy";
+                DateTime selectedDate = DateTime.ParseExact(dataGridView2.Rows[e.RowIndex].Cells[5].Value.ToString(), format, CultureInfo.InvariantCulture);
+                dateTimePicker1.Value = selectedDate;
+            }
         }
     }
 }

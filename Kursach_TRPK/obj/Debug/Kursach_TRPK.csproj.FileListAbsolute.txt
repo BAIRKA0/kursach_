@@ -20,3 +20,14 @@ E:\kursach_TRPK\Kursach_TRPK\obj\Debug\Kursach_TRPK.csproj.GenerateResource.cach
 E:\kursach_TRPK\Kursach_TRPK\obj\Debug\Kursach_TRPK.csproj.CoreCompileInputs.cache
 E:\kursach_TRPK\Kursach_TRPK\obj\Debug\Kursach_TRPK.exe
 E:\kursach_TRPK\Kursach_TRPK\obj\Debug\Kursach_TRPK.pdb
+F:\kursach_TRPK\Kursach_TRPK\bin\Debug\Kursach_TRPK.exe.config
+F:\kursach_TRPK\Kursach_TRPK\bin\Debug\Kursach_TRPK.exe
+F:\kursach_TRPK\Kursach_TRPK\bin\Debug\Kursach_TRPK.pdb
+F:\kursach_TRPK\Kursach_TRPK\obj\Debug\Kursach_TRPK.csproj.AssemblyReference.cache
+F:\kursach_TRPK\Kursach_TRPK\obj\Debug\Kursach_TRPK.csproj.SuggestedBindingRedirects.cache
+F:\kursach_TRPK\Kursach_TRPK\obj\Debug\Kursach_TRPK.Form1.resources
+F:\kursach_TRPK\Kursach_TRPK\obj\Debug\Kursach_TRPK.Properties.Resources.resources
+F:\kursach_TRPK\Kursach_TRPK\obj\Debug\Kursach_TRPK.csproj.GenerateResource.cache
+F:\kursach_TRPK\Kursach_TRPK\obj\Debug\Kursach_TRPK.csproj.CoreCompileInputs.cache
+F:\kursach_TRPK\Kursach_TRPK\obj\Debug\Kursach_TRPK.exe
+F:\kursach_TRPK\Kursach_TRPK\obj\Debug\Kursach_TRPK.pdb
