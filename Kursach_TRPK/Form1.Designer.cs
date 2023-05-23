@@ -5,7 +5,7 @@
         /// <summary>
         /// Обязательная переменная конструктора.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        public System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Освободить все используемые ресурсы.
@@ -26,10 +26,14 @@
         /// Требуемый метод для поддержки конструктора — не изменяйте 
         /// содержимое этого метода с помощью редактора кода.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
@@ -42,15 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.article = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.model = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.manufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.material = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dimensions = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.place = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -73,10 +68,27 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.booking_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.booking_article = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.booking_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.booking_place = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.booking_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.article = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.manufacturer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.material = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dimensions = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.place = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.booking_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.article1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -99,6 +111,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.textBox4);
+            this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.dateTimePicker2);
             this.tabPage1.Controls.Add(this.button1);
@@ -119,10 +135,42 @@
             this.tabPage1.Text = "Мебель";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(1004, 327);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(121, 20);
+            this.textBox4.TabIndex = 19;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(1001, 311);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 13);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "Телефон";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(1004, 265);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(121, 20);
+            this.textBox3.TabIndex = 17;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(1001, 249);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(81, 13);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Фамилия Имя";
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(1001, 250);
+            this.label12.Location = new System.Drawing.Point(1001, 374);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(33, 13);
             this.label12.TabIndex = 15;
@@ -130,7 +178,7 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(1004, 266);
+            this.dateTimePicker2.Location = new System.Drawing.Point(1004, 390);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(138, 20);
             this.dateTimePicker2.TabIndex = 14;
@@ -138,7 +186,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1004, 310);
+            this.button1.Location = new System.Drawing.Point(1004, 434);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 30);
             this.button1.TabIndex = 9;
@@ -175,9 +223,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(1001, 124);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Расположение";
+            this.label3.Text = "Адрес";
             // 
             // comboBox2
             // 
@@ -244,51 +292,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // article
-            // 
-            this.article.HeaderText = "Артикул";
-            this.article.Name = "article";
-            // 
-            // model
-            // 
-            this.model.HeaderText = "Модель";
-            this.model.Name = "model";
-            // 
-            // manufacturer
-            // 
-            this.manufacturer.HeaderText = "Изготовитель";
-            this.manufacturer.Name = "manufacturer";
-            // 
-            // material
-            // 
-            this.material.HeaderText = "Материал";
-            this.material.Name = "material";
-            // 
-            // color
-            // 
-            this.color.HeaderText = "Цвет";
-            this.color.Name = "color";
-            // 
-            // dimensions
-            // 
-            this.dimensions.HeaderText = "Габариты";
-            this.dimensions.Name = "dimensions";
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Цена";
-            this.price.Name = "price";
-            // 
-            // place
-            // 
-            this.place.HeaderText = "Расположение";
-            this.place.Name = "place";
-            // 
-            // Count
-            // 
-            this.Count.HeaderText = "Количество";
-            this.Count.Name = "Count";
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.groupBox2);
@@ -304,6 +307,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.comboBox8);
@@ -317,23 +324,23 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.comboBox4);
-            this.groupBox2.Location = new System.Drawing.Point(681, 80);
+            this.groupBox2.Location = new System.Drawing.Point(902, 80);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(474, 176);
+            this.groupBox2.Size = new System.Drawing.Size(253, 330);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Редактирование";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(98, 92);
+            this.textBox2.Location = new System.Drawing.Point(102, 119);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(114, 20);
             this.textBox2.TabIndex = 17;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(286, 112);
+            this.button3.Location = new System.Drawing.Point(102, 286);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(138, 34);
             this.button3.TabIndex = 16;
@@ -344,7 +351,7 @@
             // comboBox8
             // 
             this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(98, 61);
+            this.comboBox8.Location = new System.Drawing.Point(102, 88);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(115, 21);
             this.comboBox8.TabIndex = 14;
@@ -352,7 +359,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(286, 61);
+            this.dateTimePicker1.Location = new System.Drawing.Point(102, 250);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(138, 20);
             this.dateTimePicker1.TabIndex = 13;
@@ -360,7 +367,7 @@
             // comboBox7
             // 
             this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(98, 125);
+            this.comboBox7.Location = new System.Drawing.Point(102, 152);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(115, 21);
             this.comboBox7.TabIndex = 10;
@@ -368,7 +375,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(244, 64);
+            this.label11.Location = new System.Drawing.Point(60, 253);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(36, 13);
             this.label11.TabIndex = 9;
@@ -377,16 +384,16 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 128);
+            this.label10.Location = new System.Drawing.Point(55, 155);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 13);
+            this.label10.Size = new System.Drawing.Size(41, 13);
             this.label10.TabIndex = 8;
-            this.label10.Text = "Расположение:";
+            this.label10.Text = "Адрес:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(23, 95);
+            this.label9.Location = new System.Drawing.Point(27, 122);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 13);
             this.label9.TabIndex = 7;
@@ -395,7 +402,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(41, 64);
+            this.label8.Location = new System.Drawing.Point(45, 91);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(51, 13);
             this.label8.TabIndex = 6;
@@ -409,7 +416,7 @@
             "стул",
             "кресло",
             "полка"});
-            this.comboBox6.Location = new System.Drawing.Point(286, 26);
+            this.comboBox6.Location = new System.Drawing.Point(102, 58);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(115, 21);
             this.comboBox6.TabIndex = 5;
@@ -418,7 +425,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(219, 29);
+            this.label7.Location = new System.Drawing.Point(35, 61);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 13);
             this.label7.TabIndex = 4;
@@ -427,7 +434,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(68, 29);
+            this.label6.Location = new System.Drawing.Point(72, 27);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(24, 13);
             this.label6.TabIndex = 2;
@@ -437,7 +444,7 @@
             // 
             this.comboBox4.CausesValidation = false;
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(98, 26);
+            this.comboBox4.Location = new System.Drawing.Point(102, 24);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(115, 21);
             this.comboBox4.TabIndex = 0;
@@ -448,7 +455,7 @@
             this.groupBox1.Controls.Add(this.comboBox5);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(681, 7);
+            this.groupBox1.Location = new System.Drawing.Point(857, 7);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(298, 58);
             this.groupBox1.TabIndex = 1;
@@ -491,15 +498,17 @@
             this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.booking_category,
-            this.booking_article,
-            this.booking_quantity,
-            this.booking_place,
-            this.booking_date});
+            this.booking_id,
+            this.category,
+            this.article1,
+            this.col,
+            this.adress,
+            this.date,
+            this.fio,
+            this.tel});
             this.dataGridView2.Location = new System.Drawing.Point(7, 7);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(653, 600);
+            this.dataGridView2.Size = new System.Drawing.Size(844, 600);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
@@ -513,25 +522,122 @@
             this.booking_category.HeaderText = "Категория";
             this.booking_category.Name = "booking_category";
             // 
-            // booking_article
+            // textBox5
             // 
-            this.booking_article.HeaderText = "Артикул";
-            this.booking_article.Name = "booking_article";
+            this.textBox5.Location = new System.Drawing.Point(102, 185);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(114, 20);
+            this.textBox5.TabIndex = 19;
             // 
-            // booking_quantity
+            // label15
             // 
-            this.booking_quantity.HeaderText = "Кол-во";
-            this.booking_quantity.Name = "booking_quantity";
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(11, 188);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(84, 13);
+            this.label15.TabIndex = 18;
+            this.label15.Text = "Фамилия Имя:";
             // 
-            // booking_place
+            // textBox6
             // 
-            this.booking_place.HeaderText = "Расположение";
-            this.booking_place.Name = "booking_place";
+            this.textBox6.Location = new System.Drawing.Point(102, 215);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(114, 20);
+            this.textBox6.TabIndex = 21;
             // 
-            // booking_date
+            // label16
             // 
-            this.booking_date.HeaderText = "Дата";
-            this.booking_date.Name = "booking_date";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(40, 218);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(55, 13);
+            this.label16.TabIndex = 20;
+            this.label16.Text = "Телефон:";
+            // 
+            // article
+            // 
+            this.article.HeaderText = "Артикул";
+            this.article.Name = "article";
+            // 
+            // model
+            // 
+            this.model.HeaderText = "Модель";
+            this.model.Name = "model";
+            // 
+            // manufacturer
+            // 
+            this.manufacturer.HeaderText = "Изготовитель";
+            this.manufacturer.Name = "manufacturer";
+            // 
+            // material
+            // 
+            this.material.HeaderText = "Материал";
+            this.material.Name = "material";
+            // 
+            // color
+            // 
+            this.color.HeaderText = "Цвет";
+            this.color.Name = "color";
+            // 
+            // dimensions
+            // 
+            this.dimensions.HeaderText = "Габариты";
+            this.dimensions.Name = "dimensions";
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Цена";
+            this.price.Name = "price";
+            // 
+            // place
+            // 
+            this.place.HeaderText = "Адрес";
+            this.place.Name = "place";
+            // 
+            // Count
+            // 
+            this.Count.HeaderText = "Количество";
+            this.Count.Name = "Count";
+            // 
+            // booking_id
+            // 
+            this.booking_id.HeaderText = "ID";
+            this.booking_id.Name = "booking_id";
+            // 
+            // category
+            // 
+            this.category.HeaderText = "Категория";
+            this.category.Name = "category";
+            // 
+            // article1
+            // 
+            this.article1.HeaderText = "Артикуль";
+            this.article1.Name = "article1";
+            // 
+            // col
+            // 
+            this.col.HeaderText = "Количество";
+            this.col.Name = "col";
+            // 
+            // adress
+            // 
+            this.adress.HeaderText = "Адрес";
+            this.adress.Name = "adress";
+            // 
+            // date
+            // 
+            this.date.HeaderText = "Дата";
+            this.date.Name = "date";
+            // 
+            // fio
+            // 
+            this.fio.HeaderText = "ФИО";
+            this.fio.Name = "fio";
+            // 
+            // tel
+            // 
+            this.tel.HeaderText = "Телефон";
+            this.tel.Name = "tel";
             // 
             // Form1
             // 
@@ -557,55 +663,67 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn booking_category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn booking_article;
-        private System.Windows.Forms.DataGridViewTextBoxColumn booking_quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn booking_place;
-        private System.Windows.Forms.DataGridViewTextBoxColumn booking_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn article;
-        private System.Windows.Forms.DataGridViewTextBoxColumn model;
-        private System.Windows.Forms.DataGridViewTextBoxColumn manufacturer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn material;
-        private System.Windows.Forms.DataGridViewTextBoxColumn color;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dimensions;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn place;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Count;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TabControl tabControl1;
+        public System.Windows.Forms.TabPage tabPage1;
+        public System.Windows.Forms.TabPage tabPage2;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dataGridView2;
+        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.ComboBox comboBox3;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.ComboBox comboBox2;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.GroupBox groupBox2;
+        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.ComboBox comboBox8;
+        public System.Windows.Forms.DateTimePicker dateTimePicker1;
+        public System.Windows.Forms.ComboBox comboBox7;
+        public System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Label label10;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.ComboBox comboBox6;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.ComboBox comboBox4;
+        public System.Windows.Forms.ComboBox comboBox5;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label label12;
+        public System.Windows.Forms.DateTimePicker dateTimePicker2;
+        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.Label label13;
+        public System.Windows.Forms.DataGridViewTextBoxColumn id;
+        public System.Windows.Forms.DataGridViewTextBoxColumn booking_category;
+        public System.Windows.Forms.DataGridViewTextBoxColumn article;
+        public System.Windows.Forms.DataGridViewTextBoxColumn model;
+        public System.Windows.Forms.DataGridViewTextBoxColumn manufacturer;
+        public System.Windows.Forms.DataGridViewTextBoxColumn material;
+        public System.Windows.Forms.DataGridViewTextBoxColumn color;
+        public System.Windows.Forms.DataGridViewTextBoxColumn dimensions;
+        public System.Windows.Forms.DataGridViewTextBoxColumn price;
+        public System.Windows.Forms.DataGridViewTextBoxColumn place;
+        public System.Windows.Forms.DataGridViewTextBoxColumn Count;
+        public System.Windows.Forms.TextBox textBox6;
+        public System.Windows.Forms.Label label16;
+        public System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.Label label15;
+        public System.Windows.Forms.DataGridViewTextBoxColumn booking_id;
+        public System.Windows.Forms.DataGridViewTextBoxColumn category;
+        public System.Windows.Forms.DataGridViewTextBoxColumn article1;
+        public System.Windows.Forms.DataGridViewTextBoxColumn col;
+        public System.Windows.Forms.DataGridViewTextBoxColumn adress;
+        public System.Windows.Forms.DataGridViewTextBoxColumn date;
+        public System.Windows.Forms.DataGridViewTextBoxColumn fio;
+        public System.Windows.Forms.DataGridViewTextBoxColumn tel;
     }
 }
 

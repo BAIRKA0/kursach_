@@ -18,13 +18,13 @@ namespace Kursach_TRPK
         {
             InitializeComponent();
             LoadData_Booking();
-            comboBox1.SelectedIndex =0;
+            comboBox1.SelectedIndex = 0;
             String str = comboBox1.Text;
             LoadData_Furniture(str);
             LoadComboBox2();
             LoadComboBox4_5();
         }
-        private void LoadComboBox2() //Заполняет возможными артикулами на странице мебели
+        public void LoadComboBox2() //Заполняет возможными артикулами на странице мебели
         { 
             comboBox2.Items.Clear();
             for (int i = 0; i < dataGridView1.RowCount; i++)
@@ -32,7 +32,7 @@ namespace Kursach_TRPK
                 comboBox2.Items.Add(dataGridView1[0, i].Value);
             }
         }
-        private void LoadComboBox3() //Заполняет возможными расположениями на странице мебели
+        public void LoadComboBox3() //Заполняет возможными расположениями на странице мебели
         {
             comboBox3.Items.Clear();
             for (int i = 0; i < dataGridView1.RowCount; i++)
@@ -44,7 +44,7 @@ namespace Kursach_TRPK
             }
         }
 
-        private void LoadComboBox4_5() //Заполняет возможными id броней 
+        public void LoadComboBox4_5() //Заполняет возможными id броней 
         {
             comboBox4.Items.Clear();
             comboBox5.Items.Clear();
@@ -55,7 +55,7 @@ namespace Kursach_TRPK
             }
         }
 
-        private void LoadChange() //Заполняет поля брони
+        public void LoadChange() //Заполняет поля брони
         {
             for(int i = 0; i < dataGridView2.RowCount; i++)
             {
@@ -69,7 +69,7 @@ namespace Kursach_TRPK
                 }
             }
         }
-        private void Booking_Article(string str) //Заполняет возможными артикулами на странице броней
+        public void Booking_Article(string str) //Заполняет возможными артикулами на странице броней
         {                                     //DESKTOP-MANINV5
             string connectString = "Data Source=BAIRKA\\SQLEXPRESS; Initial Catalog=furniture_store; Integrated Security=true;";
             SqlConnection myConnection = new SqlConnection(connectString);
@@ -96,7 +96,7 @@ namespace Kursach_TRPK
                 comboBox8.Items.Add(s);
         }
 
-        private void Booking_Place(string article,string category) //Заполняет возможными расположениями на странице броней
+        public void Booking_Place(string article,string category) //Заполняет возможными расположениями на странице броней
         {
             string connectString = "Data Source=BAIRKA\\SQLEXPRESS; Initial Catalog=furniture_store; Integrated Security=true;";
             SqlConnection myConnection = new SqlConnection(connectString);
@@ -122,7 +122,7 @@ namespace Kursach_TRPK
             foreach (string s in data)
                 comboBox7.Items.Add(s);
         }
-        private void Booking() //Создает запись брони
+        public void Booking() //Создает запись брони
         {
             for (int i = 0; i < dataGridView1.RowCount; i++) {
                 if (comboBox2.Text == dataGridView1[0,i].Value.ToString() 
@@ -133,25 +133,29 @@ namespace Kursach_TRPK
                         string connectString = "Data Source=BAIRKA\\SQLEXPRESS; Initial Catalog=furniture_store; Integrated Security=true;";
                         SqlConnection myConnection = new SqlConnection(connectString);
                         myConnection.Open();
-                        string query = "INSERT INTO booking (booking_category,booking_article,booking_count,booking_place,booking_date) " +
-                            "VALUES ('" + comboBox1.Text + "', '" + comboBox2.Text + "', '" + textBox1.Text + "', '" + comboBox3.Text + "', '" + dateTimePicker2.Value.ToShortDateString() + "');";
+                        string query = "INSERT INTO booking (booking_category,booking_article,booking_count,booking_place,booking_date,booking_fio,booking_tel) " +
+                            "VALUES ('" + comboBox1.Text + "', '" + comboBox2.Text + "', '" + textBox1.Text + "', '" + comboBox3.Text + "', '" + dateTimePicker2.Value.ToShortDateString() + "', '"+textBox3.Text+"', '"+textBox4.Text+"');";
                         SqlCommand command = new SqlCommand(query, myConnection);
                         SqlDataReader reader = command.ExecuteReader();
                         reader.Close();
                         myConnection.Close();
                         LoadData_Booking();
                         LoadComboBox4_5();
-                        
+                        MessageBox.Show("Бронь добавлена", "Уведомление");
                     }
                     else
                     {
                         MessageBox.Show("Количество больше допустимого", "Ошибка");
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Не правильно введены данные", "Ошибка");
+                }
             }
         }
 
-        private void LoadData_Furniture(string str) //Заполняет таблицу мебели
+        public void LoadData_Furniture(string str) //Заполняет таблицу мебели
         {
             string connectString = "Data Source=BAIRKA\\SQLEXPRESS; Initial Catalog=furniture_store; Integrated Security=true;";
             SqlConnection myConnection = new SqlConnection(connectString);
@@ -187,7 +191,7 @@ namespace Kursach_TRPK
             foreach (string[] s in data)
                 dataGridView1.Rows.Add(s);
         }
-        private void LoadData_Booking() //Заполняет таблицу броней
+        public void LoadData_Booking() //Заполняет таблицу броней
         {
             string connectString = "Data Source=BAIRKA\\SQLEXPRESS; Initial Catalog=furniture_store; Integrated Security=true;";
             SqlConnection myConnection = new SqlConnection(connectString);
@@ -198,13 +202,15 @@ namespace Kursach_TRPK
             List<string[]> data = new List<string[]>();            
             while (reader.Read())
             {
-                data.Add(new string[6]);
+                data.Add(new string[8]);
                 data[data.Count - 1][0] = reader[0].ToString();
                 data[data.Count - 1][1] = reader[1].ToString();
                 data[data.Count - 1][2] = reader[2].ToString();
                 data[data.Count - 1][3] = reader[3].ToString();
                 data[data.Count - 1][4] = reader[4].ToString();
                 data[data.Count - 1][5] = reader[5].ToString();
+                data[data.Count - 1][6] = reader[6].ToString();
+                data[data.Count - 1][7] = reader[7].ToString();
             }
             reader.Close();
             myConnection.Close();
@@ -214,7 +220,7 @@ namespace Kursach_TRPK
                 dataGridView2.Rows.Add(s);
         }
 
-        private void Delete(string id) //Удаляет запись брони из БД
+        public void Delete(string id) //Удаляет запись брони из БД
         {
             string connectString = "Data Source=BAIRKA\\SQLEXPRESS; Initial Catalog=furniture_store; Integrated Security=true;";
             SqlConnection myConnection = new SqlConnection(connectString);
@@ -228,7 +234,7 @@ namespace Kursach_TRPK
             LoadComboBox4_5();
         }
 
-        private void Update(string id, string category, string article, int kol, string place, string date) //Редактирует запись брони в БД
+        public void Update(string id, string category, string article, int kol, string place, string date, string fio, string tel) //Редактирует запись брони в БД
         {
             string connectString = "Data Source=BAIRKA\\SQLEXPRESS; Initial Catalog=furniture_store; Integrated Security=true;";
             SqlConnection myConnection = new SqlConnection(connectString);
@@ -251,7 +257,7 @@ namespace Kursach_TRPK
             reader.Close();
             if (kol <= Convert.ToInt32(str))
             {
-                query = "UPDATE booking SET booking_category='" + category+ "',booking_article='" + article+ "',booking_count=" + kol+ ",booking_place='" + place+ "',booking_date='" + date+"' WHERE id="+id;
+                query = "UPDATE booking SET booking_category='" + category+ "',booking_article='" + article+ "',booking_count=" + kol+ ",booking_place='" + place + "',booking_date='" + date+ "',booking_fio='" + fio+"', booking_tel='"+tel+"' WHERE id=" + id;
                 command = new SqlCommand(query, myConnection);
                 reader = command.ExecuteReader();
             }
@@ -264,50 +270,50 @@ namespace Kursach_TRPK
             LoadData_Booking();
             LoadComboBox4_5();
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) //Вызывает LoadData_Furniture и LoadComboBox2 при выборе категории
+        public void comboBox1_SelectedIndexChanged(object sender, EventArgs e) //Вызывает LoadData_Furniture и LoadComboBox2 при выборе категории
         {
             String str = comboBox1.Text;
             LoadData_Furniture(str);
             LoadComboBox2();
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) //Вызывает LoadComboBox3 при выборе артикула на странице мебели
+        public void comboBox2_SelectedIndexChanged(object sender, EventArgs e) //Вызывает LoadComboBox3 при выборе артикула на странице мебели
         {
             LoadComboBox3();
         }
 
-        private void button1_Click(object sender, EventArgs e) //Вызывает Booking при нажатии на кнопку
+        public void button1_Click(object sender, EventArgs e) //Вызывает Booking при нажатии на кнопку
         {
             Booking();
         }
 
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e) //Вызывает LoadChange при выборе расположения на странице мебели
+        public void comboBox4_SelectedIndexChanged(object sender, EventArgs e) //Вызывает LoadChange при выборе расположения на странице мебели
         {
             LoadChange();
 
         }
 
-        private void button2_Click(object sender, EventArgs e) //Вызывает Delete при нажатии на кнопку
+        public void button2_Click(object sender, EventArgs e) //Вызывает Delete при нажатии на кнопку
         {
             Delete(comboBox5.Text);
         }
 
-        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e) //Вызывает Booking_Article при выборе артикула на странице брони
+        public void comboBox6_SelectedIndexChanged(object sender, EventArgs e) //Вызывает Booking_Article при выборе артикула на странице брони
         {
             Booking_Article(comboBox6.Text);
         }
 
-        private void comboBox8_SelectedIndexChanged(object sender, EventArgs e) //Вызывает Booking_Place при выборе расположения на странице брони
+        public void comboBox8_SelectedIndexChanged(object sender, EventArgs e) //Вызывает Booking_Place при выборе расположения на странице брони
         {
             Booking_Place(comboBox8.Text,comboBox6.Text);
         }
 
-        private void button3_Click(object sender, EventArgs e) //Вызывает Update при нажатии на кнопку
+        public void button3_Click(object sender, EventArgs e) //Вызывает Update при нажатии на кнопку
         {
-            Update(comboBox4.Text, comboBox6.Text, comboBox8.Text, Convert.ToInt32(textBox2.Text), comboBox7.Text, dateTimePicker1.Value.ToShortDateString());
+            Update(comboBox4.Text, comboBox6.Text, comboBox8.Text, Convert.ToInt32(textBox2.Text), comboBox7.Text, dateTimePicker1.Value.ToShortDateString(), textBox3.Text, textBox4.Text);
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        public void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Проверяем, что нажатие было на ячейку, а не на заголовок столбца
             if (e.ColumnIndex >= 0)
@@ -317,7 +323,7 @@ namespace Kursach_TRPK
             }
         }
 
-        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        public void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Проверяем, что нажатие было на ячейку, а не на заголовок столбца
             if (e.ColumnIndex >= 0)
@@ -328,10 +334,13 @@ namespace Kursach_TRPK
                 comboBox7.SelectedItem = dataGridView2.Rows[e.RowIndex].Cells[4].Value.ToString();
                 comboBox8.SelectedItem = dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString();
                 textBox2.Text = dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textBox5.Text = dataGridView2.Rows[e.RowIndex].Cells[6].Value.ToString();
+                textBox6.Text = dataGridView2.Rows[e.RowIndex].Cells[7].Value.ToString();
                 string format = "dd.MM.yyyy";
                 DateTime selectedDate = DateTime.ParseExact(dataGridView2.Rows[e.RowIndex].Cells[5].Value.ToString(), format, CultureInfo.InvariantCulture);
                 dateTimePicker1.Value = selectedDate;
             }
         }
+
     }
 }
