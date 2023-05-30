@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kursach_TRPK", "Kursach_TRPK\Kursach_TRPK.csproj", "{B1ABC97E-39BA-4E95-879B-9EEAF8C8A8AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kursach_Test", "kursach_Test\kursach_Test.csproj", "{68E00ABF-D027-4E5C-B9D1-F1005F99D8A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "tests\tests.csproj", "{C9B09886-C40C-4939-84AC-85C0DBD98888}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{B1ABC97E-39BA-4E95-879B-9EEAF8C8A8AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1ABC97E-39BA-4E95-879B-9EEAF8C8A8AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1ABC97E-39BA-4E95-879B-9EEAF8C8A8AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{68E00ABF-D027-4E5C-B9D1-F1005F99D8A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{68E00ABF-D027-4E5C-B9D1-F1005F99D8A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68E00ABF-D027-4E5C-B9D1-F1005F99D8A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{68E00ABF-D027-4E5C-B9D1-F1005F99D8A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9B09886-C40C-4939-84AC-85C0DBD98888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9B09886-C40C-4939-84AC-85C0DBD98888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9B09886-C40C-4939-84AC-85C0DBD98888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9B09886-C40C-4939-84AC-85C0DBD98888}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

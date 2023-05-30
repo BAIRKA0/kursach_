@@ -15,7 +15,7 @@ namespace kursach_Test
         public void TestMethod1()
         {
             var form = new Form1();
-            
+            form.comboBox2.SelectedItem = "10101";
         }
     }
 }

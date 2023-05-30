@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mvnuifcPipovbTjja9ZTppgBwS7QE/dhBc3UmpovhsiNxCpMWHfBXLTWCY76O8GYR6E5/v6FIqSofIW6J7NPdQ==",
+  "dgSpecHash": "jJ1QJpIAwrpDye3ZeUnWHnFlX9O7n2UFifILphPhhghd8AAYD7dvDch1D8O7u4A+P0g0GcLgBsFWr8NV2V8/Ig==",
   "success": true,
-  "projectFilePath": "E:\\kursach_TRPK\\kursach_Test\\kursach_Test.csproj",
+  "projectFilePath": "F:\\kursach_TRPK\\kursach_Test\\kursach_Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yuraz\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\yuraz\\.nuget\\packages\\microsoft.codecoverage\\17.5.0\\microsoft.codecoverage.17.5.0.nupkg.sha512",

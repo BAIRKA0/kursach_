@@ -2323,11 +2323,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\kursach_TRPK\\kursach_Test\\kursach_Test.csproj",
+      "projectUniqueName": "F:\\kursach_TRPK\\kursach_Test\\kursach_Test.csproj",
       "projectName": "kursach_Test",
-      "projectPath": "E:\\kursach_TRPK\\kursach_Test\\kursach_Test.csproj",
+      "projectPath": "F:\\kursach_TRPK\\kursach_Test\\kursach_Test.csproj",
       "packagesPath": "C:\\Users\\yuraz\\.nuget\\packages\\",
-      "outputPath": "E:\\kursach_TRPK\\kursach_Test\\obj\\",
+      "outputPath": "F:\\kursach_TRPK\\kursach_Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\yuraz\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2344,8 +2344,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\kursach_TRPK\\Kursach_TRPK\\Kursach_TRPK.csproj": {
-              "projectPath": "E:\\kursach_TRPK\\Kursach_TRPK\\Kursach_TRPK.csproj"
+            "F:\\kursach_TRPK\\Kursach_TRPK\\Kursach_TRPK.csproj": {
+              "projectPath": "F:\\kursach_TRPK\\Kursach_TRPK\\Kursach_TRPK.csproj"
             }
           }
         }
